@@ -1,0 +1,19 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+import time
+import math
+
+browser = webdriver.Chrome()
+link = "https://SunInJuly.github.io/execute_script.html"
+browser.get(link)
+
+
+button = browser.find_element_by_tag_name("button")
+
+browser.execute_script("return arguments[0].scrollIntoView(true);", button)
+button.click()
+
+
+
+time.sleep(10)
+browser.quit()

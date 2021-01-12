@@ -17,7 +17,7 @@ def test_unique_id_is_a_duck():
     uid = tasks.unique_id()
     assert uid == 'a duck'
 
-@pytest.mark.xfail()
+
 def test_unique_id_not_a_duck():
     """Продемонстрирация xpass."""
     uid = tasks.unique_id()

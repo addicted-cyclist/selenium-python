@@ -27,3 +27,17 @@ def test_get_raises():
     """get() должно возникнуть исключение с неправильным типом param."""
     with pytest.raises(TypeError):
         tasks.get(task_id='123')
+
+class TestUpdate():
+    """Тест ожидаемых исключений с tasks.update()."""
+
+    def test_bad_id(self):
+        """non-int id должен поднять excption."""
+        with pytest.raises(TypeError):
+            tasks.update(task_id={'dict instead': 1},
+                         task=tasks.Task())
+
+    def test_bad_task(self):
+        """A non-Task task должен поднять excption."""
+        with pytest.raises(TypeError):
+            tasks.update(task_id=1, task='not a task')
